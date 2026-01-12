@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://cdocl6vivcrwe"]
+
+[ext_resource type="Script" uid="uid://dweaigq24hi2r" path="res://player/player.gd" id="1_oul6g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1dw6"]
+albedo_color = Color(0, 0.7999997, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_yw30f"]
+material = SubResource("StandardMaterial3D_g1dw6")
+radius = 0.485
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g1dw6"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_oul6g"]
+height = 2.4243164
+radius = 0.5024414
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oul6g"]
+albedo_color = Color(0, 0.7833333, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oul6g"]
+material = SubResource("StandardMaterial3D_oul6g")
+size = Vector3(0.515, 0.535, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkbax"]
+albedo_color = Color(0, 0.8166666, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rkbax"]
+material = SubResource("StandardMaterial3D_rkbax")
+size = Vector3(0.1, 0.525, 0.31)
+
+[node name="player" type="RigidBody3D"]
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+contact_monitor = true
+max_contacts_reported = 10
+linear_damp = 1.0
+angular_damp = 3.0
+script = ExtResource("1_oul6g")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4818877, 0.000359416)
+mesh = SubResource("CapsuleMesh_yw30f")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_g1dw6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2121582, 0)
+shape = SubResource("CylinderShape3D_oul6g")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5046177, -0.72956526, 0)
+mesh = SubResource("BoxMesh_oul6g")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5425274, -0.7327258, 0)
+mesh = SubResource("BoxMesh_oul6g")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.74283355, 0.5690783)
+mesh = SubResource("BoxMesh_rkbax")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.73432493, -0.5443364)
+mesh = SubResource("BoxMesh_rkbax")
