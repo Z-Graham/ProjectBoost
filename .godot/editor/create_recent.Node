@@ -1,5 +1,6 @@
-MeshInstance3D
 CollisionShape3D
+MeshInstance3D
+AnimatableBody3D
 RigidBody3D
 Camera3D
 CSGBox3D

@@ -56,11 +56,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5046177, -0.72956526, 0)
 mesh = SubResource("BoxMesh_oul6g")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5425274, -0.7327258, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5425274, -0.72486037, 0)
 mesh = SubResource("BoxMesh_oul6g")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.74283355, 0.5690783)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.73467827, 0.5690783)
 mesh = SubResource("BoxMesh_rkbax")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="."]

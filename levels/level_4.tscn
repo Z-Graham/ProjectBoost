@@ -28,7 +28,7 @@ albedo_color = Color(0, 0.73333335, 1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hjsbj"]
 albedo_color = Color(0, 1, 0.049999952, 1)
 
-[node name="Level_3" type="Node3D"]
+[node name="Level_4" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hjsbj")
