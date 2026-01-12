@@ -1,6 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdocl6vivcrwe"]
+[gd_scene load_steps=13 format=3 uid="uid://cdocl6vivcrwe"]
 
 [ext_resource type="Script" uid="uid://dweaigq24hi2r" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="AudioStream" uid="uid://d381l6nbvvum1" path="res://assets/audio/SFX - Death Explosion.ogg" id="2_rkbax"]
+[ext_resource type="AudioStream" uid="uid://bdbe7dxtawhse" path="res://assets/audio/SFX - Success.ogg" id="2_yw30f"]
+[ext_resource type="AudioStream" uid="uid://6ytf4cddt3sv" path="res://assets/audio/SFX - Main engine thrust.ogg" id="4_qjkh3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1dw6"]
 albedo_color = Color(0, 0.7999997, 1, 1)
@@ -66,3 +69,12 @@ mesh = SubResource("BoxMesh_rkbax")
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.73432493, -0.5443364)
 mesh = SubResource("BoxMesh_rkbax")
+
+[node name="SuccessAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yw30f")
+
+[node name="explosionAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rkbax")
+
+[node name="RocketAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_qjkh3")

@@ -8,6 +8,10 @@ var transitioning=false
 func _process(delta: float) -> void:
 	if not transitioning:
 		if Input.is_action_pressed("boost"):
+			if not $RocketAudio.is_playing():
+				$RocketAudio.play()
+			else:
+				$RocketAudio.stop()
 			apply_central_force(basis.y*delta*force)
 			
 		if Input.is_action_pressed("rotate_left"):
@@ -18,13 +22,14 @@ func _process(delta: float) -> void:
 		
 
 func crash_sequence():
-	print('kaboom')
+	$explosionAudio.play()
 	gravity_scale=0
 	transitioning=true
 	await get_tree().create_timer(2.5).timeout
 	get_tree().reload_current_scene.call_deferred()
 
 func complete_level(next_level_file):
+	$SuccessAudio.play()
 	transitioning=true
 	await get_tree().create_timer(2.5).timeout
 	get_tree().change_scene_to_file.call_deferred(next_level_file)

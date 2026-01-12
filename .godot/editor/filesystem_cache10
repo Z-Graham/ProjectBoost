@@ -1,13 +1,21 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1768240185
+::res://::1768242772
 icon.svg::CompressedTexture2D::8879861208309667812::1767811980::1767811986::1::::<><><>0<>0<>330cf00329ed925afd7b658c407335fe<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://levels/::1767983913
+::res://assets/::1768242772
+::res://assets/audio/::1768242772
+SFX - Death Explosion.ogg::AudioStreamOggVorbis::9194274072753723738::1768242760::1768242772::1::::<><><>0<>0<>4461cded2a8062668eb4ad6ffa61d5fd<>res://.godot/imported/SFX - Death Explosion.ogg-220cc769ac14ef59f655a63ce5dc37fe.oggvorbisstr::
+SFX - Main engine thrust.ogg::AudioStreamOggVorbis::2226563297116383889::1768242760::1768242772::1::::<><><>0<>0<>67381b071c11e87072a35288b7cf6a53<>res://.godot/imported/SFX - Main engine thrust.ogg-e1e1ca953e3a7fc54629e6c2054c5357.oggvorbisstr::
+SFX - Success.ogg::AudioStreamOggVorbis::2599351799701978964::1768242760::1768242772::1::::<><><>0<>0<>6e7675ebd4ac6c703567794f46990c18<>res://.godot/imported/SFX - Success.ogg-fe290b2828948b9ccd06810a26b1a8f3.oggvorbisstr::
+::res://levels/::1768242486
 landing_pad.gd::GDScript::3814657335881818507::1767981893::0::1::::<>CSGBox3D<><>0<>0<><>::
 level.tscn::PackedScene::3470583907447299425::1767982784::0::1::::<><><>0<>0<><>::uid://cdocl6vivcrwe::::res://player/player.tscn<>uid://bul334o3wpo80::::res://levels/landing_pad.gd
 level_2.tscn::PackedScene::8751201079569684395::1767982784::0::1::::<><><>0<>0<><>::uid://bul334o3wpo80::::res://levels/landing_pad.gd<>uid://cdocl6vivcrwe::::res://player/player.tscn
 level_3.tscn::PackedScene::5745895032020250209::1767983312::0::1::::<><><>0<>0<><>::uid://bul334o3wpo80::::res://levels/landing_pad.gd<>uid://cdocl6vivcrwe::::res://player/player.tscn
-level_4.tscn::PackedScene::1035267401380178244::1767983656::0::1::::<><><>0<>0<><>::uid://bul334o3wpo80::::res://levels/landing_pad.gd<>uid://cdocl6vivcrwe::::res://player/player.tscn
-level_5.tscn::PackedScene::6301627466142022791::1767983912::0::1::::<><><>0<>0<><>::uid://bul334o3wpo80::::res://levels/landing_pad.gd<>uid://cdocl6vivcrwe::::res://player/player.tscn
-::res://player/::1767984045
-player.gd::GDScript::8711688749606260911::1767983833::0::1::::Player<>RigidBody3D<><>0<>0<><>::
-player.tscn::PackedScene::5012451925632015572::1767984045::0::1::::<><><>0<>0<><>::uid://dweaigq24hi2r::::res://player/player.gd
+level_4.tscn::PackedScene::1035267401380178244::1768241807::0::1::::<><><>0<>0<><>::uid://bul334o3wpo80::::res://levels/landing_pad.gd<>uid://cdocl6vivcrwe::::res://player/player.tscn
+level_5.tscn::PackedScene::6301627466142022791::1768241811::0::1::::<><><>0<>0<><>::uid://bul334o3wpo80::::res://levels/landing_pad.gd<>uid://cdocl6vivcrwe::::res://player/player.tscn
+level_6.tscn::PackedScene::1397164320180545385::1768242404::0::1::::<><><>0<>0<><>::uid://bul334o3wpo80::::res://levels/landing_pad.gd<>uid://cdocl6vivcrwe::::res://player/player.tscn<>uid://bt8y4cfwbg5nk::::res://levels/moving_obstacle.tscn
+moving_obstacle.gd::GDScript::2553040683600740245::1768242486::0::1::::<>AnimatableBody3D<><>0<>0<><>::
+moving_obstacle.tscn::PackedScene::3789642288321235068::1768242064::0::1::::<><><>0<>0<><>::uid://bcmyhbmdbmi6h::::res://levels/moving_obstacle.gd
+::res://player/::1768241807
+player.gd::GDScript::8711688749606260911::1768241807::0::1::::Player<>RigidBody3D<><>0<>0<><>::
+player.tscn::PackedScene::5012451925632015572::1768240561::0::1::::<><><>0<>0<><>::uid://dweaigq24hi2r::::res://player/player.gd
