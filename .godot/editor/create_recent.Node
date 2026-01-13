@@ -1,6 +1,7 @@
-AudioStreamPlayer3D
-AudioStreamPlayer
+Node3D
 CollisionShape3D
+AudioStreamPlayer
+AudioStreamPlayer3D
 MeshInstance3D
 AnimatableBody3D
 RigidBody3D
