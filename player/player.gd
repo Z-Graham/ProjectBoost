@@ -36,12 +36,14 @@ func crash_sequence():
 	$mainBooster.emitting=false
 	$rightBooster.emitting=false
 	$leftBooster.emitting=false
+	$ExplosionParticles.emitting=true
 	await get_tree().create_timer(2.5).timeout
 	get_tree().reload_current_scene.call_deferred()
 
 func complete_level(next_level_file):
 	$SuccessAudio.play()
 	transitioning=true
+	$SuccessParticles.emitting=true
 	await get_tree().create_timer(2.5).timeout
 	get_tree().change_scene_to_file.call_deferred(next_level_file)
 

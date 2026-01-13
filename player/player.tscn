@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://cdocl6vivcrwe"]
+[gd_scene load_steps=17 format=3 uid="uid://cdocl6vivcrwe"]
 
 [ext_resource type="Script" uid="uid://dweaigq24hi2r" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="AudioStream" uid="uid://d381l6nbvvum1" path="res://assets/audio/SFX - Death Explosion.ogg" id="2_rkbax"]
 [ext_resource type="AudioStream" uid="uid://bdbe7dxtawhse" path="res://assets/audio/SFX - Success.ogg" id="2_yw30f"]
 [ext_resource type="AudioStream" uid="uid://6ytf4cddt3sv" path="res://assets/audio/SFX - Main engine thrust.ogg" id="4_qjkh3"]
-[ext_resource type="PackedScene" uid="uid://ux6ivcx1ovdp" path="res://assets/booster_particles.tscn" id="5_qjkh3"]
+[ext_resource type="PackedScene" uid="uid://ux6ivcx1ovdp" path="res://particles/booster_particles.tscn" id="5_qjkh3"]
+[ext_resource type="PackedScene" uid="uid://jfwajmrh6ca7" path="res://particles/success_particles.tscn" id="6_boad6"]
+[ext_resource type="PackedScene" uid="uid://dcecb8hw7dbrv" path="res://particles/explosion_particles.tscn" id="7_rgyib"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1dw6"]
 albedo_color = Color(0, 0.7999997, 1, 1)
@@ -107,3 +109,7 @@ shape = SubResource("BoxShape3D_qjkh3")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.00023251721, -0.7250707, 0.012786865)
 shape = SubResource("BoxShape3D_qjkh3")
+
+[node name="SuccessParticles" parent="." instance=ExtResource("6_boad6")]
+
+[node name="ExplosionParticles" parent="." instance=ExtResource("7_rgyib")]
