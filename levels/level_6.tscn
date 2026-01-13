@@ -34,7 +34,7 @@ use_collision = true
 size = Vector3(2.18, 0.25, 2.008)
 material = SubResource("StandardMaterial3D_pltw0")
 script = ExtResource("1_vflpa")
-file_path = "uid://cv1s5bsqf4v48"
+file_path = "uid://bppgalo8yq4j2"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hjsbj")

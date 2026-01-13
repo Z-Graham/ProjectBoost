@@ -4,7 +4,7 @@ class_name Player
 @export var force=1500.0
 @export var turn_force=600.0
 @onready var rocket_audio: AudioStreamPlayer3D = $RocketAudio
-
+@export var challenge=false
 var transitioning=false
 func _process(delta: float) -> void:
 	if not transitioning:
@@ -28,7 +28,9 @@ func _process(delta: float) -> void:
 			$leftBooster.emitting=true
 		else:
 			$leftBooster.emitting=false
-		
+		if challenge==true:
+			apply_central_force(basis.y*delta*force)
+			$mainBooster.emitting=true
 
 func crash_sequence():
 	$explosionAudio.play()
