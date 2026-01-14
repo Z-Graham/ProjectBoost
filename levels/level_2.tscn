@@ -1,23 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwxfadyla8qad"]
+[gd_scene load_steps=8 format=3 uid="uid://dwxfadyla8qad"]
 
 [ext_resource type="Script" uid="uid://bul334o3wpo80" path="res://levels/landing_pad.gd" id="1_pqqg8"]
+[ext_resource type="PackedScene" uid="uid://bwx0g4gp4xp86" path="res://levels/ui.tscn" id="1_v5uil"]
 [ext_resource type="PackedScene" uid="uid://cdocl6vivcrwe" path="res://player/player.tscn" id="2_0srwa"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_umreq"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_80vhd"]
-sky_material = SubResource("ProceduralSkyMaterial_umreq")
-
-[sub_resource type="Environment" id="Environment_hjsbj"]
-background_mode = 2
-sky = SubResource("Sky_80vhd")
-tonemap_mode = 2
-glow_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umreq"]
-albedo_color = Color(0.35605434, 0.0016099736, 0.69128054, 1)
+[ext_resource type="PackedScene" uid="uid://dggap0hfxi606" path="res://levels/floor.tscn" id="3_0srwa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80vhd"]
 albedo_color = Color(0, 0.73333335, 1, 1)
@@ -30,18 +16,7 @@ albedo_color = Color(0.35605434, 0.0016099736, 0.69128054, 1)
 
 [node name="Level_2" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_hjsbj")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
-
-[node name="floor" type="CSGBox3D" parent="." groups=["Bad"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
-use_collision = true
-size = Vector3(30, 8, 5)
-material = SubResource("StandardMaterial3D_umreq")
+[node name="Ui" parent="." instance=ExtResource("1_v5uil")]
 
 [node name="launch_pad" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0.1, 0)
@@ -62,11 +37,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2145953, 12.169729)
 
 [node name="player" parent="." instance=ExtResource("2_0srwa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.2545252, 0)
+starting_fuel = 150
 
 [node name="obstacle" type="CSGBox3D" parent="." groups=["Bad"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10356188, 1.5393968, 0.0034217834)
 use_collision = true
 size = Vector3(3, 3, 4.993164)
 material = SubResource("StandardMaterial3D_pqqg8")
+
+[node name="floor" parent="." instance=ExtResource("3_0srwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.0268173, 0)
 
 [connection signal="body_entered" from="player" to="player" method="_on_body_entered"]

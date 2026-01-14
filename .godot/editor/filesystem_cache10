@@ -1,7 +1,6 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1768328052
+::res://::1768414114
 icon.svg::CompressedTexture2D::8879861208309667812::1767811980::1767811986::1::::<><><>0<>0<>330cf00329ed925afd7b658c407335fe<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-ship.tscn::PackedScene::4304500028624238723::1768329401::0::1::::<><><>0<>0<><>::
 ::res://assets/::1768328052
 ::res://assets/audio/::1768325904
 SFX - Death Explosion.ogg::AudioStreamOggVorbis::9194274072753723738::1768242760::1768242772::1::::<><><>0<>0<>4461cded2a8062668eb4ad6ffa61d5fd<>res://.godot/imported/SFX - Death Explosion.ogg-220cc769ac14ef59f655a63ce5dc37fe.oggvorbisstr::
@@ -21,6 +20,7 @@ moving_obstacle.tscn::PackedScene::3789642288321235068::1768242064::0::1::::<><>
 booster_particles.tscn::PackedScene::1453155181391318073::1768326926::0::1::::<><><>0<>0<><>::
 explosion_particles.tscn::PackedScene::7308022214277692275::1768328148::0::1::::<><><>0<>0<><>::
 success_particles.tscn::PackedScene::643357747384234160::1768328148::0::1::::<><><>0<>0<><>::
-::res://player/::1768329189
+::res://player/::1768329578
 player.gd::GDScript::8711688749606260911::1768329189::0::1::::Player<>RigidBody3D<><>0<>0<><>::
-player.tscn::PackedScene::5012451925632015572::1768329318::0::1::::<><><>0<>0<><>::uid://dweaigq24hi2r::::res://player/player.gd<>uid://d381l6nbvvum1::::res://assets/audio/SFX - Death Explosion.ogg<>uid://bdbe7dxtawhse::::res://assets/audio/SFX - Success.ogg<>uid://6ytf4cddt3sv::::res://assets/audio/SFX - Main engine thrust.ogg<>uid://ux6ivcx1ovdp::::res://particles/booster_particles.tscn<>uid://jfwajmrh6ca7::::res://particles/success_particles.tscn<>uid://dcecb8hw7dbrv::::res://particles/explosion_particles.tscn
+player.tscn::PackedScene::5012451925632015572::1768329578::0::1::::<><><>0<>0<><>::uid://dweaigq24hi2r::::res://player/player.gd<>uid://d381l6nbvvum1::::res://assets/audio/SFX - Death Explosion.ogg<>uid://bdbe7dxtawhse::::res://assets/audio/SFX - Success.ogg<>uid://6ytf4cddt3sv::::res://assets/audio/SFX - Main engine thrust.ogg<>uid://ux6ivcx1ovdp::::res://particles/booster_particles.tscn<>uid://jfwajmrh6ca7::::res://particles/success_particles.tscn<>uid://dcecb8hw7dbrv::::res://particles/explosion_particles.tscn
+ship.tscn::PackedScene::4304500028624238723::1768329401::0::1::::<><><>0<>0<><>::

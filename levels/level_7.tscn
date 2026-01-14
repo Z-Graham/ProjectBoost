@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://t52deu20b45b"]
+[gd_scene load_steps=11 format=3 uid="uid://nahyew62borj"]
 
-[ext_resource type="PackedScene" uid="uid://bwx0g4gp4xp86" path="res://levels/ui.tscn" id="1_8tsbn"]
-[ext_resource type="Script" uid="uid://bul334o3wpo80" path="res://levels/landing_pad.gd" id="1_vflpa"]
-[ext_resource type="PackedScene" uid="uid://cdocl6vivcrwe" path="res://player/player.tscn" id="2_pltw0"]
-[ext_resource type="PackedScene" uid="uid://bt8y4cfwbg5nk" path="res://levels/moving_obstacle.tscn" id="3_pltw0"]
-[ext_resource type="PackedScene" uid="uid://dggap0hfxi606" path="res://levels/floor.tscn" id="4_qskt5"]
+[ext_resource type="Script" uid="uid://bul334o3wpo80" path="res://levels/landing_pad.gd" id="1_e8mof"]
+[ext_resource type="PackedScene" uid="uid://bwx0g4gp4xp86" path="res://levels/ui.tscn" id="1_jgr6b"]
+[ext_resource type="PackedScene" uid="uid://cdocl6vivcrwe" path="res://player/player.tscn" id="2_jgr6b"]
+[ext_resource type="PackedScene" uid="uid://bt8y4cfwbg5nk" path="res://levels/moving_obstacle.tscn" id="3_vendn"]
+[ext_resource type="PackedScene" uid="uid://dggap0hfxi606" path="res://levels/floor.tscn" id="4_urq6f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pltw0"]
 albedo_color = Color(0, 1, 0.049999952, 1)
@@ -25,17 +25,17 @@ glow_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80vhd"]
 albedo_color = Color(0, 0.73333335, 1, 1)
 
-[node name="Level_6" type="Node3D"]
+[node name="Level_7" type="Node3D"]
 
-[node name="Ui" parent="." instance=ExtResource("1_8tsbn")]
+[node name="Ui" parent="." instance=ExtResource("1_jgr6b")]
 
 [node name="landing_pad" type="CSGBox3D" parent="." groups=["Goal"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.13106191, 0)
 use_collision = true
 size = Vector3(2.18, 0.25, 2.008)
 material = SubResource("StandardMaterial3D_pltw0")
-script = ExtResource("1_vflpa")
-file_path = "uid://nahyew62borj"
+script = ExtResource("1_e8mof")
+file_path = "uid://b83tdbphrpgw2"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hjsbj")
@@ -53,16 +53,20 @@ material = SubResource("StandardMaterial3D_80vhd")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2145953, 12.169729)
 
-[node name="player" parent="." instance=ExtResource("2_pltw0")]
+[node name="player" parent="." instance=ExtResource("2_jgr6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.2545252, 0)
-starting_fuel = 150
 
-[node name="moving obstacle" parent="." instance=ExtResource("3_pltw0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4885068, 0)
+[node name="moving obstacle" parent="." instance=ExtResource("3_vendn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0573215, 1.4885068, 0)
 destination = Vector3(0, 10, 0)
 duration = 1.0
 
-[node name="floor" parent="." instance=ExtResource("4_qskt5")]
+[node name="moving obstacle2" parent="." instance=ExtResource("3_vendn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.271864, 11.396492, 0)
+destination = Vector3(0, -10, 0)
+duration = 1.0
+
+[node name="floor" parent="." instance=ExtResource("4_urq6f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02419281, -3.9911308, -0.01707077)
 
 [connection signal="body_entered" from="player" to="player" method="_on_body_entered"]

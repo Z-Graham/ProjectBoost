@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cn4mb00xl54bl"]
+[gd_scene load_steps=11 format=3 uid="uid://cn4mb00xl54bl"]
 
+[ext_resource type="PackedScene" uid="uid://bwx0g4gp4xp86" path="res://levels/ui.tscn" id="1_bmgug"]
 [ext_resource type="Script" uid="uid://bul334o3wpo80" path="res://levels/landing_pad.gd" id="1_hldmh"]
 [ext_resource type="PackedScene" uid="uid://cdocl6vivcrwe" path="res://player/player.tscn" id="2_gew73"]
+[ext_resource type="PackedScene" uid="uid://dggap0hfxi606" path="res://levels/floor.tscn" id="3_gew73"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_umreq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,9 +21,6 @@ glow_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hldmh"]
 albedo_color = Color(0.35605434, 0.0016099736, 0.69128054, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umreq"]
-albedo_color = Color(0.35605434, 0.0016099736, 0.69128054, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80vhd"]
 albedo_color = Color(0, 0.73333335, 1, 1)
 
@@ -29,6 +28,8 @@ albedo_color = Color(0, 0.73333335, 1, 1)
 albedo_color = Color(0, 1, 0.049999952, 1)
 
 [node name="Level_3" type="Node3D"]
+
+[node name="Ui" parent="." instance=ExtResource("1_bmgug")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hjsbj")
@@ -49,12 +50,6 @@ use_collision = true
 size = Vector3(3, 29.468445, 4.993164)
 material = SubResource("StandardMaterial3D_hldmh")
 
-[node name="floor" type="CSGBox3D" parent="." groups=["Bad"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
-use_collision = true
-size = Vector3(30, 8, 5)
-material = SubResource("StandardMaterial3D_umreq")
-
 [node name="launch_pad" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0.1, 0)
 use_collision = true
@@ -74,5 +69,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2145953, 12.169729)
 
 [node name="player" parent="." instance=ExtResource("2_gew73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.2545252, 0)
+starting_fuel = 150
+
+[node name="floor" parent="." instance=ExtResource("3_gew73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02419281, -4.0368204, -0.01707077)
 
 [connection signal="body_entered" from="player" to="player" method="_on_body_entered"]

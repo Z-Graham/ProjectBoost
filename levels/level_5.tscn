@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cv1s5bsqf4v48"]
+[gd_scene load_steps=11 format=3 uid="uid://cv1s5bsqf4v48"]
 
+[ext_resource type="PackedScene" uid="uid://bwx0g4gp4xp86" path="res://levels/ui.tscn" id="1_dhnqt"]
 [ext_resource type="Script" uid="uid://bul334o3wpo80" path="res://levels/landing_pad.gd" id="1_yaabq"]
 [ext_resource type="PackedScene" uid="uid://cdocl6vivcrwe" path="res://player/player.tscn" id="2_dhnqt"]
 
@@ -30,6 +31,8 @@ albedo_color = Color(0, 1, 0.049999952, 1)
 
 [node name="Level_5" type="Node3D"]
 
+[node name="Ui" parent="." instance=ExtResource("1_dhnqt")]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hjsbj")
 
@@ -38,15 +41,15 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="obstacle" type="CSGBox3D" parent="." groups=["Bad"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36900997, 6.680453, 0.0034217834)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36900997, 17.315739, 0.0034217834)
 use_collision = true
-size = Vector3(30.821976, 5.8055344, 4.993164)
+size = Vector3(30.821976, 27.076107, 4.993164)
 material = SubResource("StandardMaterial3D_hldmh")
 
 [node name="obstacle2" type="CSGBox3D" parent="." groups=["Bad"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.520441, 0.79369545, 0.097530365)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.520441, 11.37776, 0.097530365)
 use_collision = true
-size = Vector3(3, 17.626877, 4.993164)
+size = Vector3(3, 38.795006, 4.993164)
 material = SubResource("StandardMaterial3D_hldmh")
 
 [node name="floor" type="CSGBox3D" parent="." groups=["Bad"]]
@@ -74,5 +77,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2145953, 12.169729)
 
 [node name="player" parent="." instance=ExtResource("2_dhnqt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.2545252, 0)
+starting_fuel = 100
 
 [connection signal="body_entered" from="player" to="player" method="_on_body_entered"]

@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://dggap0hfxi606"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umreq"]
+albedo_color = Color(0.35605434, 0.0016099736, 0.69128054, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwqvt"]
+albedo_color = Color(0.19713002, 0.00029022843, 0.30302906, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_umreq"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_80vhd"]
+sky_material = SubResource("ProceduralSkyMaterial_umreq")
+
+[sub_resource type="Environment" id="Environment_hjsbj"]
+background_mode = 2
+sky = SubResource("Sky_80vhd")
+ambient_light_source = 3
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="floor" type="CSGBox3D" groups=["Bad"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02419281, 0.028983116, -0.01707077)
+use_collision = true
+size = Vector3(30, 8, 5)
+material = SubResource("StandardMaterial3D_umreq")
+
+[node name="wall" type="CSGBox3D" parent="."]
+transform = Transform3D(0.9531485, 0.302503, 0, -0.302503, 0.9531485, 0, 0, 0, 1, -15.751311, 9.268141, 0)
+size = Vector3(5, 19.311646, 5)
+material = SubResource("StandardMaterial3D_umreq")
+
+[node name="wall2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.98376, -0.17948905, 0, 0.17948905, 0.98376, 0, 0, 0, 1, 15.404625, 12.858933, 0)
+size = Vector3(5, 19.311646, 5)
+material = SubResource("StandardMaterial3D_umreq")
+
+[node name="Ceiling" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.016440302, 0.99986446, 0, -0.99986446, -0.016440302, 0, 0, 0, 1, -1.4489355, 19.306736, 0)
+size = Vector3(5, 28.865662, 5)
+material = SubResource("StandardMaterial3D_umreq")
+
+[node name="space" type="CSGBox3D" parent="."]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -1.8582599, 11.542644, -5.146352)
+size = Vector3(101.97287, 48.01171, 5)
+material = SubResource("StandardMaterial3D_cwqvt")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hjsbj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.98127425, -0.067842, -0.18027301, -0.03071383, -0.8688334, 0.49415097, -0.19015141, 0.49043447, 0.85048014, 0, 13.256552, 11.679823)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2239294, 9.837093, 0)
+light_color = Color(0.7166667, 0, 1, 1)
+light_energy = 16.0
+omni_range = 12.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9862261, 9.469974, 0)
+light_color = Color(0.7166667, 0, 1, 1)
+light_energy = 16.0
+omni_range = 12.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.664873, 9.293721, 0)
+light_color = Color(0.7166667, 0, 1, 1)
+light_energy = 16.0
+omni_range = 12.0
+omni_attenuation = 2.0

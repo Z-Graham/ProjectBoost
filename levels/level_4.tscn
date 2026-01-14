@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://o0qx5qw1lt7a"]
+[gd_scene load_steps=11 format=3 uid="uid://o0qx5qw1lt7a"]
 
 [ext_resource type="Script" uid="uid://bul334o3wpo80" path="res://levels/landing_pad.gd" id="1_b15rf"]
+[ext_resource type="PackedScene" uid="uid://bwx0g4gp4xp86" path="res://levels/ui.tscn" id="1_t0qhu"]
 [ext_resource type="PackedScene" uid="uid://cdocl6vivcrwe" path="res://player/player.tscn" id="2_s4mq8"]
+[ext_resource type="PackedScene" uid="uid://dggap0hfxi606" path="res://levels/floor.tscn" id="3_s4mq8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_umreq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,9 +21,6 @@ glow_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hldmh"]
 albedo_color = Color(0.35605434, 0.0016099736, 0.69128054, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umreq"]
-albedo_color = Color(0.35605434, 0.0016099736, 0.69128054, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80vhd"]
 albedo_color = Color(0, 0.73333335, 1, 1)
 
@@ -29,6 +28,8 @@ albedo_color = Color(0, 0.73333335, 1, 1)
 albedo_color = Color(0, 1, 0.049999952, 1)
 
 [node name="Level_4" type="Node3D"]
+
+[node name="Ui" parent="." instance=ExtResource("1_t0qhu")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hjsbj")
@@ -48,12 +49,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0384674, 25.936977, 0.0034
 use_collision = true
 size = Vector3(3, 22.487152, 4.993164)
 material = SubResource("StandardMaterial3D_hldmh")
-
-[node name="floor" type="CSGBox3D" parent="." groups=["Bad"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
-use_collision = true
-size = Vector3(30, 8, 5)
-material = SubResource("StandardMaterial3D_umreq")
 
 [node name="launch_pad" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0.1, 0)
@@ -86,5 +81,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.726653, 22.125416, 0.003421
 use_collision = true
 size = Vector3(3, 30.110275, 4.993164)
 material = SubResource("StandardMaterial3D_hldmh")
+
+[node name="floor" parent="." instance=ExtResource("3_s4mq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.071855545, -4.066845, -0.0041236877)
 
 [connection signal="body_entered" from="player" to="player" method="_on_body_entered"]

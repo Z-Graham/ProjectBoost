@@ -5,11 +5,24 @@ class_name Player
 @export var turn_force=600.0
 @onready var rocket_audio: AudioStreamPlayer3D = $RocketAudio
 @export var challenge=false
+@export var starting_fuel=250
+var ui: CanvasLayer
+
+var fuel:int: 
+	set(amt):
+		fuel=amt
+		ui.update_fuel(amt)
 var transitioning=false
+
+func _ready() -> void:
+	ui=get_tree().get_first_node_in_group("ui")
+	fuel=starting_fuel
+
 func _process(delta: float) -> void:
 	if not transitioning:
-		if Input.is_action_pressed("boost"):
+		if Input.is_action_pressed("boost") and fuel>0:
 			apply_central_force(basis.y*delta*force)
+			fuel-=1
 			$mainBooster.emitting=true
 			if not rocket_audio.is_playing():
 				rocket_audio.play()

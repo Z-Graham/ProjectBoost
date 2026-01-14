@@ -1,23 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bppgalo8yq4j2"]
+[gd_scene load_steps=7 format=3 uid="uid://bppgalo8yq4j2"]
 
 [ext_resource type="PackedScene" uid="uid://cdocl6vivcrwe" path="res://player/player.tscn" id="1_80vhd"]
+[ext_resource type="PackedScene" uid="uid://dggap0hfxi606" path="res://levels/floor.tscn" id="1_cwqvt"]
 [ext_resource type="Script" uid="uid://bul334o3wpo80" path="res://levels/landing_pad.gd" id="1_hjsbj"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_umreq"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_80vhd"]
-sky_material = SubResource("ProceduralSkyMaterial_umreq")
-
-[sub_resource type="Environment" id="Environment_hjsbj"]
-background_mode = 2
-sky = SubResource("Sky_80vhd")
-tonemap_mode = 2
-glow_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umreq"]
-albedo_color = Color(0.35605434, 0.0016099736, 0.69128054, 1)
+[ext_resource type="PackedScene" uid="uid://bwx0g4gp4xp86" path="res://levels/ui.tscn" id="4_5mrsh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80vhd"]
 albedo_color = Color(0, 0.73333335, 1, 1)
@@ -27,18 +13,8 @@ albedo_color = Color(0, 1, 0.049999952, 1)
 
 [node name="Level" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_hjsbj")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.98127437, -0.06784208, -0.18027315, -0.18152103, 0.012652487, 0.9833058, -0.06442854, 0.99761593, -0.024730371, 0, 9.256552, 0)
-shadow_enabled = true
-
-[node name="floor" type="CSGBox3D" parent="." groups=["Bad"]]
+[node name="floor" parent="." instance=ExtResource("1_cwqvt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
-use_collision = true
-size = Vector3(30, 8, 5)
-material = SubResource("StandardMaterial3D_umreq")
 
 [node name="launch_pad" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0.1, 0)
@@ -57,7 +33,10 @@ file_path = "uid://dwxfadyla8qad"
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2145953, 12.169729)
 
+[node name="Ui" parent="." instance=ExtResource("4_5mrsh")]
+
 [node name="player" parent="." instance=ExtResource("1_80vhd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.2545252, 0)
+starting_fuel = 150
 
 [connection signal="body_entered" from="player" to="player" method="_on_body_entered"]
